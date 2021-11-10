@@ -11,10 +11,14 @@ from led_display import LEDdisplay
 dataPin, latchPin, clockPin = 23, 24, 25
 
 theLEDdisplay= LEDdisplay(dataPin, latchPin, clockPin)
+# Pick a number sequence
+sequence = [8, 6, 7, 5, 3, 0, 9]
 
 try: 
   while True:
-    theLEDdisplay.setNumber(1)
+    for n in range(len(sequence)):
+      theLEDdisplay.setNumber(sequence[n])
+      time.sleep(0.4)
 except KeyboardInterrupt:
   GPIO.cleanup()
   
