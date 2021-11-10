@@ -14,11 +14,12 @@ theLEDdisplay= LEDdisplay(dataPin, latchPin, clockPin)
 # Pick a number sequence
 sequence = [8, 6, 7, 5, 3, 0, 9]
 
+
 try: 
   while True:
-    
-    theLEDdisplay.setNumber(8)
-      
+    for n in range(len(sequence)):
+      theLEDdisplay.setNumber(sequence[n])
+      time.sleep(5)
 except KeyboardInterrupt:
   GPIO.cleanup()
   
