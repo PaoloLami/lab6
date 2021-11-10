@@ -16,9 +16,9 @@ sequence = [8, 6, 7, 5, 3, 0, 9]
 
 try: 
   while True:
-    for n in range(len(sequence)):
-      theLEDdisplay.setNumber(sequence[n])
-      time.sleep(0.4)
+    
+    theLEDdisplay.setNumber(8)
+      
 except KeyboardInterrupt:
   GPIO.cleanup()
   
