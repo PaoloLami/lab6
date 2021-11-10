@@ -14,7 +14,7 @@ theLEDdisplay= LEDdisplay(dataPin, latchPin, clockPin)
 
 try: 
   while True:
-    theLEDdisplay.setNumber(8)
+    theLEDdisplay.setNumber(1)
 except KeyboardInterrupt:
   GPIO.cleanup()
   
