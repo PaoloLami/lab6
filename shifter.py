@@ -3,6 +3,8 @@
 import RPi.GPIO as GPIO
 import time
 
+GPIO.setwarnings(False)
+
 class Shifter():
 
   'Shift register class'

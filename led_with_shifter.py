@@ -1,4 +1,5 @@
 import time
+import RPi.GPIO as GPIO
 from led_display import LEDdisplay
 
 # Simple demonstration of the LEDdisplay class.
@@ -11,5 +12,9 @@ dataPin, latchPin, clockPin = 23, 24, 25
 
 theLEDdisplay= LEDdisplay(dataPin, latchPin, clockPin)
 
-while True:
-  theLEDdisplay.setNumber(8)
+try: 
+  while True:
+    theLEDdisplay.setNumber(8)
+except KeyboardInterrupt:
+  GPIO.cleanup()
+  
