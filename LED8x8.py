@@ -21,7 +21,7 @@ try:
     LED = LED8x8(dataPin, latchPin, clockPin)
     for n in range(len(pattern)):
       LED.display(n)
-      time.sleep(0.01)
+      time.sleep(0.001)
 except KeyboardInterrupt:
   GPIO.cleanup()
 
