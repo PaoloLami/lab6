@@ -13,6 +13,7 @@ class LED8x8():
  
   def display(self, num):
     self.shifter.shiftByte(pattern[num])  # load the row values
+    self.shifter.shiftByte(1 << (num-1)) #select current row
   
 
 try: 
