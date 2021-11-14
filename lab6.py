@@ -1,6 +1,6 @@
 import time
 import RPi.GPIO as GPIO
-import LED8x8
+from LED8x8 import LED8x8
 
 
 dataPin, latchPin, clockPin = 23, 24, 25
