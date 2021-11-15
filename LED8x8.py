@@ -25,8 +25,7 @@ dataPin, latchPin, clockPin = 23, 24, 25
 disp = LED8x8(dataPin, latchPin, clockPin)
 
 try:
-  while True:
-    pass
+  LED8x8.p.start()
 except KeyboardInterrupt:
   GPIO.cleanup()
   disp.p.terminate() 
