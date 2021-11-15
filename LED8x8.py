@@ -34,8 +34,8 @@ class LED8x8():
   def bug(self, row, col):
     x = random.randint(-1, 1)
     y = random.randint(-1, 1)
-    row += y
-    col += x
+    row.value += y
+    col.value += x
     if col < 0: 
       col = 0
     if col > 7:

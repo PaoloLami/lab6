@@ -4,7 +4,7 @@ import multiprocessing
 import time
 
 col = multiprocessing.Value('i')
-col.value = 0b00010000
+col.value = 3
 row = multiprocessing.Value('i')
 row.value = 4
 
