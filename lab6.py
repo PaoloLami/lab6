@@ -1,19 +1,17 @@
-import time
 import RPi.GPIO as GPIO
 from LED8x8 import LED8x8
-import random
+import multiprocessing
 
-
-mov = random.randint(-1, 1)
-
+col = multiprocessing.Value('i')
+col.value = 0b00010000
+row = 4
 
 dataPin, latchPin, clockPin = 23, 24, 25
-disp = LED8x8(dataPin, latchPin, clockPin)
+disp = LED8x8(dataPin, latchPin, clockPin, row, col)
 
-try: 
-  while True:
-    for n in range(8):
-      disp.display(n)
-      time.sleep(0.001)
+try:
+  disp.bug(row,col)
 except KeyboardInterrupt:
   GPIO.cleanup()
+  disp.p.terminate() 
+  disp.p.join(2) 
