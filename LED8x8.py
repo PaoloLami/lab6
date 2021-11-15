@@ -36,15 +36,15 @@ class LED8x8():
     y = random.randint(-1, 1)
     row.value += y
     col.value += x
-    if col < 0: 
-      col = 0
-    if col > 7:
-      col = 7
-    if row < 0: 
-      row = 0
-    if row > 7:
-      row = 7
-    return row, col
+    if col.value < 0: 
+      col.value = 0
+    if col.value > 7:
+      col.value = 7
+    if row.value < 0: 
+      row.value = 0
+    if row.value > 7:
+      row.value = 7
+    return row.value, col.value
     
 
 
