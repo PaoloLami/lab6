@@ -11,22 +11,21 @@ class LED8x8():
   def __init__(self, data, latch, clock):
     self.shifter = Shifter(data, latch, clock)
 
-  def display(self,pattern):
+  def display(self):
     while True:
       for n in range(8):
         self.shifter.shiftByte(pattern[n])  # load the row values
         self.shifter.shiftByte(1 << (n)) #select current row
         time.sleep(0.001)
     
-  p = multiprocessing.Process(target=display,args=(pattern))
+  p = multiprocessing.Process(target=display)
 
 dataPin, latchPin, clockPin = 23, 24, 25
 disp = LED8x8(dataPin, latchPin, clockPin)
 try:
   disp.p.daemon = True
   disp.p.start()
-  while True:
-    pass
+  disp.display()
 except KeyboardInterrupt:
   GPIO.cleanup()
   disp.p.terminate() 
