@@ -28,7 +28,7 @@ class LED8x8():
     while True:
       self.shifter.shiftByte(pattern[col.value])  # load the row values
       self.shifter.shiftByte(1 << (row.value)) #select current row
-      time.sleep(0.001)
+      time.sleep(0.005)
 
   def bug(self, row, col):
     x = random.randint(-1, 1)
