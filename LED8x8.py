@@ -1,6 +1,5 @@
 from shifter import Shifter 
 import time
-import RPi.GPIO as GPIO
 import multiprocessing
 import random
 
