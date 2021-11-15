@@ -11,7 +11,7 @@ class LED8x8():
     self.shifter = Shifter(data, latch, clock)
     p = multiprocessing.Process(target=self.display)
     p.daemon = True
-    p.start()
+    #p.start()
 
   def display(self):
     pat[0], pat[1], pat[2], pat[3], pat[4], pat[5], pat[6], pat[7] = 0b11000011, 0b10111101, 0b01011010, 0b01111110, 0b01011010, 0b01100110, 0b10111101, 0b11000011
