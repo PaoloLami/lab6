@@ -4,14 +4,14 @@ import multiprocessing
 import random
 
 pattern = [
-0b10000000, # 0
-0b01000000, # 1
-0b00100000, # 2
-0b00010000, # 3
-0b00001000, # 4
-0b00000100, # 5
-0b00000010, # 6
-0b00000001, # 7
+0b01111111, # 0
+0b10111111, # 1
+0b11011111, # 2
+0b11101111, # 3
+0b11110111, # 4
+0b11111011, # 5
+0b11111101, # 6
+0b11111110, # 7
 ]
 
 
@@ -28,7 +28,7 @@ class LED8x8():
     #pat[0], pat[1], pat[2], pat[3], pat[4], pat[5], pat[6], pat[7] = 0b11000011, 0b10111101, 0b01011010, 0b01111110, 0b01011010, 0b01100110, 0b10111101, 0b11000011
     while True:
       self.shifter.shiftByte(pattern[col.value])  # load the row values
-      self.shifter.shiftByte(1 << (row.value-1)) #select current row
+      self.shifter.shiftByte(1 << (row.value)) #select current row
       time.sleep(0.001)
 
   def bug(self, row, col):
