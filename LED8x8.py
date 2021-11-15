@@ -10,7 +10,7 @@ class LED8x8():
 
   def __init__(self, data, latch, clock):
     self.shifter = Shifter(data, latch, clock)
-    p = multiprocessing.Process(target=LED8x8.display)
+    p = multiprocessing.Process(target=LED8x8.display())
     p.daemon = True
     p.start()
 
