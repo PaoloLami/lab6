@@ -1,6 +1,10 @@
 import time
 import RPi.GPIO as GPIO
 from LED8x8 import LED8x8
+import random
+
+
+mov = random.randint(-1, 1)
 
 
 dataPin, latchPin, clockPin = 23, 24, 25
