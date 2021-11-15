@@ -19,7 +19,7 @@ class LED8x8():
       for n in range(8):
         self.shifter.shiftByte(pattern[n])  # load the row values
         self.shifter.shiftByte(1 << (n)) #select current row
-        time.sleep(0.001)
+        time.sleep(0.005)
 
 dataPin, latchPin, clockPin = 23, 24, 25
 disp = LED8x8(dataPin, latchPin, clockPin)
