@@ -17,7 +17,6 @@ pattern = [
 
 class LED8x8():
 
-
   def __init__(self, data, latch, clock, row,col):
     self.shifter = Shifter(data, latch, clock)
     p = multiprocessing.Process(target=self.display, args=(row,col))
