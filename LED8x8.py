@@ -18,14 +18,13 @@ class LED8x8():
         time.sleep(0.001)
     
 
-  p = multiprocessing.Process(name='display',target=display)
-  p.daemon = True
-  p.start() 
+  p = multiprocessing.Process(target=display)
 
 dataPin, latchPin, clockPin = 23, 24, 25
 disp = LED8x8(dataPin, latchPin, clockPin)
 try:
-  disp.display()
+  disp.p.daemon = True
+  disp.p.start()
 except KeyboardInterrupt:
   GPIO.cleanup()
   disp.p.terminate() 
