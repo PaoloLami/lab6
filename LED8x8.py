@@ -4,7 +4,6 @@ import RPi.GPIO as GPIO
 import multiprocessing
 
 pattern = [0b11000011, 0b10111101, 0b01011010, 0b01111110, 0b01011010, 0b01100110, 0b10111101, 0b11000011]
-myArray = multiprocessing.Array('i',8)
 
 class LED8x8():
 
@@ -19,7 +18,7 @@ class LED8x8():
         time.sleep(0.001)
     
 
-  p = multiprocessing.Process(name='display',target=display,args=(pattern,myArray))
+  p = multiprocessing.Process(name='display',target=display)
   p.daemon = True
   p.start() 
 
